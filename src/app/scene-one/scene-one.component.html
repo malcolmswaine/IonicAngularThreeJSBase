@@ -1,0 +1,73 @@
+
+
+<!-- <ion-content class="ion-padding">
+  <button mat-raised-button>Click me!</button>
+</ion-content> -->
+<style>
+  .header-md::after {
+    background-image: none;
+  }
+
+
+  ion-icon {
+    color: #616e7e;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 27px;
+    height: 27px;
+  }
+
+  ion-header, ion-content {
+    --ion-background-color: #f2f2f2;
+  }
+
+  .full-screen-menu {
+    display: block;
+  }
+  @media(min-width: 1000px) {
+    .full-screen-menu {
+      display: none;
+    }
+  }
+
+
+</style>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="ion-padding">
+      EN
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" #canvasParent id="canvasParent">
+
+    <canvas #canvas id="canvas" height="100%" width="100%" style="height: 100%; width: 100%;"></canvas>
+
+</ion-content>
+
+<ion-footer [translucent]="true" class="full-screen-menu">
+  <ion-toolbar>
+    <div style="display: flex; justify-content: space-around;">
+      <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon ios="home-outline" md="home-outline"></ion-icon>
+      </ion-item>
+      <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon ios="document-outline" md="document-outline"></ion-icon>
+      </ion-item>
+      <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon ios="qr-code-outline" md="qr-code-outline"></ion-icon>
+      </ion-item>
+      <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon ios="person-outline" md="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+        <ion-icon ios="notifications-outline" md="notifications-outline"></ion-icon>
+      </ion-item>
+    </div>
+  </ion-toolbar>
+</ion-footer>

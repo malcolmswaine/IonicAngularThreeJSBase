@@ -1,0 +1,68 @@
+<style>
+
+  .full-screen-menu {
+    display: none;
+  }
+  @media(min-width: 1000px) {
+    .full-screen-menu {
+      display: block;
+    }
+  }
+
+
+</style>
+
+
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Ionic NG ThreeJS</ion-list-header>
+          <ion-note>malcolmswaine@gmail.com</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- <ion-list id="labels-list" class="full-screen-menu">
+          <ion-list-header>Navigation</ion-list-header>
+
+          <ion-menu-toggle  auto-hide="false" >
+
+            <ion-item routerDirection="root" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="home-outline" md="home-outline"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" lines="none" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start"  ios="document-outline" md="document-outline"></ion-icon>
+              <ion-label>My Documents</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" lines="none"  [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="qr-code-outline" md="qr-code-outline"></ion-icon>
+              <ion-label>Scan</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" lines="none" [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="person-outline" md="person-outline"></ion-icon>
+              <ion-label>My Profile</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" lines="none"  [routerLink]="patient-home" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" ios="notifications-outline" md="notifications-outline"></ion-icon>
+              <ion-label>Notifications</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list> -->
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

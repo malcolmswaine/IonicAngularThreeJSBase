@@ -1,0 +1,40 @@
+install ionic CLI
+=========================
+npm install -g @ionic/cli
+
+
+install angaulr CLI
+=========================
+npm install -g @angular/cli
+
+
+run in browser
+=========================
+ionic serve --livereload
+
+
+add android as a build target
+=========================
+ionic cordova platform add android
+
+
+run on android device
+=========================
+ionic cordova run android --device --livereload
+ionic cordova run android --device --no-build --livereload
+
+
+
+Update resources
+==========================
+ionic cordova resources
+
+
+build release (builds apk)
+=========================
+ionic cordova build android --release
+
+
+
+
+
